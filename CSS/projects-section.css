@@ -76,35 +76,46 @@ body {
 }
 .site-container {
   min-height: 100vh;
+  margin: 0.4rem;
 }
 
 .site-wrapper {
   min-width: 60%;
-  max-width: 90%;
+  max-width: 100%;
   max-height: 100vh;
   margin: 0 auto;
 }
 
 .section-projects {
   height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navigator {
-  /* position: absolute; */
+  width: 100%;
+  height: 5rem;
+
+  background: rgb(56, 56, 56);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding: 0 10% 0 10%; */
 
-  height: 10%;
-  border-bottom: 0.1rem solid rgb(56, 56, 56);
-  padding: 0 5% 0 5%;
+  /* border-bottom: 1px solid rgb(56, 56, 56); */
+  /* padding: 0 5% 0 5%; */
+}
+
+.nav-gap {
+  flex: 1 0 1rem;
 }
 
 .navigation-buttons {
+  height: 5rem;
   display: flex;
-  gap: 3rem;
+  /* gap: 2rem; */
+  align-items: center;
 
   list-style: none;
 
@@ -117,34 +128,72 @@ body {
 
   height: 4rem;
   width: 4rem;
-  border: 0.1rem dotted rgb(56, 56, 56);
-  border-radius: 3rem;
-  margin-top: 0.5rem;
+
+  border: 0.1rem dotted white;
+  border-radius: 50%;
+
+  margin-left: 1rem;
+
+  box-shadow: inset 0 0 0.2rem 0.2rem rgb(56, 56, 56);
+
+  transition: all 0.3s ease-in-out;
 }
 
 .button {
   font-size: medium;
   font-weight: 400;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 1rem;
+
+  transition: box-shadow 0.2s linear;
 }
 
-.logo {
-  font-weight: bold;
-  height: 3rem;
-  width: 3rem;
-  border: 0.1rem solid rgb(56, 56, 56);
-  border-radius: 3rem;
-  margin-top: 10%;
-  margin-left: 10%;
-  transition: all 0.3s ease-in-out;
+.button.active {
+  /* box-shadow: inset 0px -50px rgb(56, 56, 56); */
+  box-shadow: inset 0px -50px white;
 }
 
-.logo:hover {
+.button.active .link {
+  /* color: white; */
+  color: rgb(56, 56, 56);
+}
+
+.link:hover {
+  /* color: rgb(56, 56, 56); */
+  color: white;
+  font-weight: 500;
+}
+
+.link:active {
+  color: rgb(56, 56, 56);
+  font-weight: 500;
+}
+
+.link:visited {
+  /* color: rgb(56, 56, 56); */
+  color: white;
+  font-weight: 500;
+}
+
+.link:focus {
+  color: rgb(56, 56, 56);
+  font-weight: 500;
+}
+
+.logo-container:hover {
   background: rgb(56, 56, 56);
   cursor: pointer;
+
+  box-shadow: inset 0 0 0.2rem 0.2rem rgb(255, 255, 255);
 }
 
 .projects-container {
-  margin: 10rem 0 10rem 0;
+  /* margin: 10rem 0 10rem 0; */
+  width: 80%;
 }
 
 .projects {
@@ -162,18 +211,18 @@ body {
 
   display: inline-block;
 
-  width: 25rem;
-  height: 35rem;
+  width: 80%;
+  height: 100rem;
 
-  border: 0.1rem solid rgb(56, 56, 56);
-  border-radius: 0.3rem;
+  /* border: 0.1rem solid rgb(56, 56, 56); */
+  /* border-radius: 0.3rem; */
   overflow: hidden;
 }
 
-.project-padding {
+/* .project-padding {
   border: 0.9rem solid white;
   height: 100%;
-}
+} */
 
 .img-container {
   width: 100%;
@@ -192,68 +241,51 @@ body {
 #bottom,
 #left,
 #right {
-  /* background: #e0dfdf; */
-  /* background: rgb(56, 56, 56); */
   background: white;
   position: fixed;
-  z-index: -1;
+  z-index: 1;
 }
 #left,
 #right {
-  /* top: 0.2rem; */
   top: 0.4rem;
-  /* bottom: 0.28rem; */
+
   bottom: 0.4rem;
-  /* width: 0.3rem; */
+
   width: 0.5rem;
 }
 #left {
   left: 0;
-  border-right: 0.1rem solid rgb(56, 56, 56);
+  border-right: 0.2rem solid rgb(56, 56, 56);
 }
 #right {
   right: 0;
-  border-left: 0.1rem solid rgb(56, 56, 56);
+  border-left: 0.2rem solid rgb(56, 56, 56);
 }
 
 #top,
 #bottom {
-  /* left: 0.3rem;
+  left: 0.3rem;
   right: 0.3rem;
-  height: 0.3rem; */
-  left: 0.5rem;
-  right: 0.5rem;
   height: 0.5rem;
 }
 #top {
   top: 0;
-  border-bottom: 0.1rem solid rgb(56, 56, 56);
+  border-bottom: 0.2rem solid rgb(56, 56, 56);
 }
 #bottom {
   bottom: 0;
-  border-top: 0.1rem solid rgb(56, 56, 56);
+  border-top: 0.2rem solid rgb(56, 56, 56);
 }
 
-#top-margin,
+/* #top-margin,
 #bottom-margin {
   position: fixed;
-  /* left: 0.3rem;
-  right: 0.3rem; */
+
   left: 0.5rem;
   right: 0.5rem;
   height: 0.4rem;
   background: white;
-}
-
-#top-margin {
-  /* margin-top: 0.3rem; */
-  z-index: 100;
-}
-#bottom-margin {
-  /* margin-top: 0.3rem; */
-  z-index: 100;
-  bottom: 0;
-}
+} */
 
 footer {
   border-top: 0.1rem solid rgb(56, 56, 56);
