@@ -140,6 +140,7 @@ body {
 }
 
 .button {
+  position: relative;
   font-size: medium;
   font-weight: 400;
   height: 100%;
@@ -152,71 +153,80 @@ body {
   transition: box-shadow 0.2s linear;
 }
 
+/* .button:hover::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: solid 0.1rem white;
+  border-top: none;
+  border-bottom: none;
+} */
+
+.button-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.button-inner:hover {
+  border: solid 0.1rem white;
+  border-top: none;
+  border-bottom: none;
+}
+
 .button.active {
-  /* box-shadow: inset 0px -50px rgb(56, 56, 56); */
   box-shadow: inset 0px -50px white;
+  font-weight: 500;
 }
 
-.button.active .link {
-  /* color: white; */
-  color: rgb(56, 56, 56);
-}
-
-.link:hover {
-  /* color: rgb(56, 56, 56); */
+.button a:visited {
   color: white;
-  font-weight: 500;
 }
 
-.link:active {
+.button.active a {
   color: rgb(56, 56, 56);
-  font-weight: 500;
 }
 
-.link:visited {
-  /* color: rgb(56, 56, 56); */
-  color: white;
-  font-weight: 500;
-}
+/* .optionals {
+  position: absolute;
+  top: 4.9rem;
 
-.link:focus {
-  color: rgb(56, 56, 56);
-  font-weight: 500;
-}
-
-.option {
-  position: relative;
+  background: rgb(56, 56, 56);
+  width: 101%;
+  height: 10rem;
   display: flex;
   flex-wrap: wrap;
 }
 
-.emty-border {
-  top: 5px;
-  width: 90%;
-  position: absolute;
-  border: solid 0.2rem rgb(56, 56, 56);
-  height: 90%;
-}
-
-.specific {
-  color: rgb(56, 56, 56);
-  position: absolute;
-  top: 4.9rem;
-
+.option {
+  width: 100%;
   text-align: center;
-  line-height: 4rem;
-
-  border: solid 0.2rem rgb(56, 56, 56);
-  /* padding: 2rem 1.5rem; */
-  width: 90%;
-  height: 90%;
-}
+  line-height: 5rem;
+  color: white;
+} */
 
 .logo-container:hover {
   background: rgb(56, 56, 56);
   cursor: pointer;
 
   box-shadow: inset 0 0 0.2rem 0.2rem rgb(255, 255, 255);
+}
+
+.mail-me {
+  position: relative;
+  border: solid 0.2rem white;
+  width: 3rem;
+  height: 2rem;
+  margin: 0 1rem;
+}
+.mail-detail {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: solid transparent 1.3rem;
+  border-top: solid 1.5rem white;
+  border-bottom: 0;
 }
 
 .projects-container {
@@ -239,18 +249,18 @@ body {
 
   display: inline-block;
 
-  width: 80%;
-  height: 100rem;
+  width: 20rem;
+  height: 30rem;
 
-  /* border: 0.1rem solid rgb(56, 56, 56); */
-  /* border-radius: 0.3rem; */
+  border: 0.1rem solid rgb(56, 56, 56);
+  border-radius: 0.3rem;
   overflow: hidden;
 }
 
-/* .project-padding {
+.project-padding {
   border: 0.9rem solid white;
   height: 100%;
-} */
+}
 
 .img-container {
   width: 100%;
