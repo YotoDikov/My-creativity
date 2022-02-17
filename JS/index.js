@@ -1,5 +1,5 @@
 const buttonsSections = document.querySelectorAll("[data-link]");
-// console.log(buttonsSections);
+console.log(buttonsSections);
 
 let currentSelection;
 
